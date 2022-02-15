@@ -3,12 +3,31 @@
 
 using namespace std;
 
-class Node
+typedef struct tagNode
 {
-public:
 	int value;
-	Node* back;
-};
+	tagNode* next;
+}Node;
+
+Node* back(Node* _pNode)
+{
+	if (_pNode->next != nullptr)
+		back(_pNode->next);
+	else
+		return _pNode;
+}
+
+Node* pList = new Node;
+
+void push_back(int _number, Node* _obj = pList)
+{
+	Node* pList2 = new Node;
+	pList2->value = _number;
+	pList2->next = nullptr;
+
+	Node* backNode = back(pList);
+	backNode->next = pList2;
+}
 
 int main()
 {
@@ -31,21 +50,31 @@ int main()
 		cout << *iter << endl;
 	}
 	*/
+	pList->value = 0;
+	pList->next = nullptr;
+
+	for (int i = 0; i < 10; ++i)
+	{
+		push_back(i + 1, pList);
+	}
+
+	cout << back(pList)->value << endl;
 	
-	Node* pList = new Node;
 
-	pList->value = 1;
-	pList->back = nullptr;
+	/*
+	int i = 10;
+	int j = 20;
+	j ^= i;
+	i ^= j;
+	j ^= i;
 
-	Node* pNode = new Node;
+	cout << "i : " << i << endl;
+	cout << "j : " << j << endl;
+	*/
 
-	pNode->value = 1;
-	pNode->back = nullptr;
-
-	pList->back = pNode;
-
-	cout << pList->value << endl;
-	cout << pList->back->value << endl;
-	
+	system("pause");
 	return 0;
 }
+
+//배열크기 등은 2^n으로 : 컴파일러는 2^n가 아닌 수를 2^n인 수들의 연산으로 표현하므로, 메모리를 불필요하게 잡아먹게 된다.
+//1 , !
