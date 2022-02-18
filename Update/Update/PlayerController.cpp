@@ -1,6 +1,5 @@
 #include "PlayerController.h"
-#include <iostream>
-using namespace std;
+#include "headers.h"
 
 void PlayerController::Init()
 {

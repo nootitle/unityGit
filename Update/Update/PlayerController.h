@@ -1,16 +1,18 @@
 #pragma once
 #include "mainUpdate.h"
+#include "Obejct.h"
 
-class PlayerController : mainUpdate
+class Object;
+class PlayerController : public Obejct
 {
 public:
-	void Init();
-	void Update();
-	void LateUpdate();
-	void render();
-	void Destroy();
+	virtual void Init();
+	virtual void Update();
+	virtual void LateUpdate();
+	virtual void render();
+	virtual void Destroy();
 public:
 	PlayerController();
-	~PlayerController();
+	virtual ~PlayerController();
 };
 

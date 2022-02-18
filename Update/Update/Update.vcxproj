@@ -125,11 +125,14 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainUpdate.cpp" />
+    <ClCompile Include="Obejct.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="headers.h" />
     <ClInclude Include="mainUpdate.h" />
+    <ClInclude Include="Obejct.h" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="Scene.h" />
   </ItemGroup>

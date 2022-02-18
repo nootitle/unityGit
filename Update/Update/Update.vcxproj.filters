@@ -22,11 +22,11 @@
     <Filter Include="소스 파일\Scene">
       <UniqueIdentifier>{d4ceb73b-c309-4921-bb17-6e43d04de5d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\main">
+      <UniqueIdentifier>{ef72837b-78cd-478d-aeca-208067d008be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="mainUpdate.cpp">
       <Filter>소스 파일\mainUpdate</Filter>
     </ClCompile>
@@ -36,16 +36,28 @@
     <ClCompile Include="Scene.cpp">
       <Filter>소스 파일\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일\main</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct.cpp">
+      <Filter>소스 파일\main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="mainUpdate.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\mainUpdate</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="headers.h">
+      <Filter>소스 파일\main</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct.h">
+      <Filter>소스 파일\main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
