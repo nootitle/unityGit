@@ -37,7 +37,7 @@ int main()
 	Objects["Enemy"] = Enemys;
 	
 	//*** 출력 답안 ***
-	//깊은 복사 버전
+	//답안1 : 깊은 복사 버전
 	auto temp = Objects["Enemy"];
 	while (!temp.empty())
 	{
@@ -45,7 +45,7 @@ int main()
 		temp.pop_front();
 	}
 
-	//iterator 버전
+	//답안2 : iterator 버전
 	for (auto itr = Objects["Enemy"].begin(); itr != Objects["Enemy"].end(); ++itr)
 	{
 		auto temp2 = *itr;
