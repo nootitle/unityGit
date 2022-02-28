@@ -13,8 +13,14 @@ int Size = 0;
 INFO* InfoList;
 
 void push_back(int _value);
+void pop_back();
 void erase(int _index);
-//INFO* ierase(void* _Where);
+INFO* ierase(const void* _Where);
+
+int size();
+int Capacity();
+
+void output();
 
 /*
 	[void ∆˜¿Œ≈Õ]
@@ -31,13 +37,16 @@ int main()
 	push_back(50);
 	push_back(60);
 	push_back(70);
-	erase(2);
-	for (int i = 0; i < Size; ++i)
-		cout << InfoList[i].Value << endl;
+	pop_back();
+	//erase(2);
 	
-	//for(int i = 0; i < 3; ++i)
-		//if(i == 3)
-			//erase(&InfoList[i]);
+	INFO* test = nullptr;
+	for(int i = 0; i < Size; ++i)
+		if(i == 3)
+			test = ierase(&InfoList[i]);
+
+	//cout << test->Value << endl << endl;
+	output();
 
 	system("pause");
 	return 0;
@@ -71,6 +80,11 @@ void push_back(int _value)
 	++Size;
 }
 
+void pop_back()
+{
+	--Size;
+}
+
 void erase(int _index)
 {
 	INFO* Temp = new INFO[capacity];
@@ -84,8 +98,38 @@ void erase(int _index)
 	--Size;
 }
 
-//INFO * ierase(void* _Where)
-//{
-	//INFO* itr = 
-	//return nullptr;
-//}
+INFO * ierase(const void* _Where)
+{
+	int Start = 0;
+	for (int i = 0; i < Size; ++i)
+	{
+		if (InfoList[i].Value == ((INFO*)_Where)->Value)
+		{
+			Start = i;
+			break;
+		}
+	}
+	--Size;
+	for (int i = Start; i < Size; ++i)
+	{
+		InfoList[i] = InfoList[i + 1];
+	}
+
+	return &InfoList[Start];
+}
+
+int size()
+{
+	return Size;
+}
+
+int Capacity()
+{
+	return capacity;
+}
+
+void output()
+{
+	for (int i = 0; i < Size; ++i)
+		cout << InfoList[i].Value << endl;
+}
