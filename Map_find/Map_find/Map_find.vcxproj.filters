@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\99. Manager">
       <UniqueIdentifier>{d46b0958-f702-4820-a1b1-35ea251b3ce3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\99. Manager\SceneManager">
+      <UniqueIdentifier>{584a928d-7d19-476b-b8c5-5f3f7ea02d6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -68,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>소스 파일\02. Scene\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>소스 파일\99. Manager\SceneManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>소스 파일\02. Scene\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>소스 파일\99. Manager\SceneManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -36,6 +36,48 @@ map<string, list<Object*>> Objects;
 
 void AddObject(Object* _Obj);
 */
+
+//오버로딩 vs 오버라이딩
+//오버로딩 : 같은 클래스 내에서의 함수 재정의(매개변수를 다르게 주는 방식)
+//오버라이딩 : 상속 관계에서의 함수 재정의(자식클래스에서 상속받은 함수를 재정의하는 방식)
+//참고 : 포인터선언을 부모클래스 형태의 포인터로 하면, 오버로딩이 적용되지 않고, 부모함수가 호출된다.
+//new 클래스명 == 클래스만큼의 size의 공간을 heap에 할당(자식클래스의 기능을 받지는 않음)
+//단! virtual 함수의 경우, new 뒤의 클래스의 함수를 호출한다. 때문에
+//함수를 virtual로 선언해두면, 오버로딩이 씹히는 경우가 없다.
+
+//상속관계에서의 생성자, 소멸자 : 부모 생성자 -> 자식 생성자 -> 자식 소멸자 -> 부모 소멸자 순으로 호출
+
+class Singleton
+{
+private:
+	static Singleton* Instance;
+public:
+	static Singleton* GetInstance()
+	{
+		if (Instance == nullptr) Instance = new Singleton;
+		return Instance;
+	}
+private: //싱글톤은 임의로 인스턴스를 생성하지 못하게 막아야 함
+	Singleton() {}
+	~Singleton() {}
+};
+
+class AAA
+{
+public:
+	virtual void out() { cout << "o" << endl; }
+	AAA() { cout << "aa" << endl; }
+	~AAA() { cout << "ab" << endl; }
+};
+
+class BBB : public AAA
+{
+public:
+	virtual void out() { cout << "ow" << endl; }
+	BBB() { cout << "ba" << endl; }
+	~BBB() { cout << "bb" << endl; }
+};
+
 int main()
 {	
 	/*
@@ -51,7 +93,13 @@ int main()
 
 */	
 	
-
+	//Singleton* a = new Singleton();
+	//delete a;
+	
+	//AAA* a = new AAA;
+	AAA* b = new BBB; // == AAA* aa = (BBB*)malloc(sizeof(BBB));
+	b->out();
+	delete b;
 
 	return 0;
 }
