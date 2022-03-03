@@ -1,13 +1,9 @@
-#include <iostream>
-#include <list>
-#include <vector>
-#include <map>
-using namespace std;
+#include "MainUpdate.h"
 
 //참고 : 클래스 내부에 정의된 함수는 inline 함수가 된다.
 //inline : 컴파일러가 할 수 있는 한, 일반함수들보다 빨리 실행시키는 함수들
 //일반 함수 : 코드영역(대기 큐) -> 실행(스택) / inline : 바로 실행(스택)
-
+/*
 class Object
 {
 protected:
@@ -39,9 +35,10 @@ void AddObject(int _num);
 map<string, list<Object*>> Objects;
 
 void AddObject(Object* _Obj);
-
+*/
 int main()
 {	
+	/*
 	for (int i = 0; i < 10; ++i)
 	{
 		Object* pObj = CreateObject<Enemy>(i);
@@ -52,9 +49,13 @@ int main()
 			cout << (*itr2)->GetNumber() << endl;
 
 
+*/	
+	
+
+
 	return 0;
 }
-
+/*
 void Enemy::Initialize()
 {
 	strKey = "Enemy";
@@ -100,3 +101,4 @@ void AddObject(Object* _Obj)
 		itr->second.push_back(_Obj);
 	}
 }
+*/
