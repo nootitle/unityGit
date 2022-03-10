@@ -3,20 +3,18 @@
 
 class Bullet : public Object
 {
-	protected:
-		string strKey;
-		int iNumber;
 	public:
-		virtual void Start()PURE;
-		virtual void Update()PURE;
-		virtual void Render()PURE;
-		virtual void Release()PURE;
+		virtual void Start()override;
+		virtual void Update()override;
+		virtual void Render()override;
+		virtual void Release()override;
 	public:
-		void SetNumber(int _num) { iNumber = _num; }
 		int GetNumber() { return iNumber; }
+		void SetNumber(int v) { iNumber = v; }
 		string GetKey() { return strKey; }
 
 		Bullet();
+		Bullet(int value);
 		virtual ~Bullet();
 };
 

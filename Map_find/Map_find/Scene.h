@@ -3,6 +3,9 @@
 
 class Scene
 {
+protected:
+	ULONGLONG Time;
+
 public:
 	virtual void Start()PURE;
 	virtual void Update()PURE;

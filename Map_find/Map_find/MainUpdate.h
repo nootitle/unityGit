@@ -4,7 +4,8 @@
 class MainUpdate
 {
 private:
-
+	int iNumber;
+	ULONGLONG Time;
 public:
 	void Start();
 	void Update();

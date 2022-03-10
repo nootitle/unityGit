@@ -40,6 +40,18 @@
     <Filter Include="소스 파일\99. Manager\SceneManager">
       <UniqueIdentifier>{584a928d-7d19-476b-b8c5-5f3f7ea02d6b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\99. Manager\ObjectManager">
+      <UniqueIdentifier>{9a499ca2-e2fb-46e9-af94-9086dd08464a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Manager\ObjectManager\ObjectFactory">
+      <UniqueIdentifier>{234049c5-2e4a-4e74-a2a8-b89003fe1f0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Manager\Cursor">
+      <UniqueIdentifier>{2cc22876-fe66-4586-a398-fa7ee87f5753}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Manager\Collision">
+      <UniqueIdentifier>{32f32370-7082-4a54-b5ae-78b312b50904}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>소스 파일\99. Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일\99. Manager\ObjectManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +127,21 @@
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>소스 파일\99. Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>소스 파일\99. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>소스 파일\99. Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>소스 파일\99. Manager\ObjectManager\ObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="CursorManager.h">
+      <Filter>소스 파일\99. Manager\Cursor</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
+      <Filter>소스 파일\99. Manager\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

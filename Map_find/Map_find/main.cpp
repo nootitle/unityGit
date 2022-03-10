@@ -43,10 +43,12 @@ void AddObject(Object* _Obj);
 //참고 : 포인터선언을 부모클래스 형태의 포인터로 하면, 오버로딩이 적용되지 않고, 부모함수가 호출된다.
 //new 클래스명 == 클래스만큼의 size의 공간을 heap에 할당(자식클래스의 기능을 받지는 않음)
 //단! virtual 함수의 경우, new 뒤의 클래스의 함수를 호출한다. 때문에
-//함수를 virtual로 선언해두면, 오버로딩이 씹히는 경우가 없다.
+//함수를 virtual로 선언해두면, 오버로딩이 씹히는 경우가 없다.(부모, 포인터 데이터타입따윈 무시하고 new 뒤 클래스의 함수사용)
 
 //상속관계에서의 생성자, 소멸자 : 부모 생성자 -> 자식 생성자 -> 자식 소멸자 -> 부모 소멸자 순으로 호출
+//delete에서 이점을 유의해야 함(delete는 기본적으로 상속관계를 고려하지 않기에, 소멸자에 virtual을 써야 부모, 자식 소멸자를 모두 호출한다.)
 
+/*
 class Singleton
 {
 private:
@@ -67,7 +69,7 @@ class AAA
 public:
 	virtual void out() { cout << "o" << endl; }
 	AAA() { cout << "aa" << endl; }
-	~AAA() { cout << "ab" << endl; }
+	virtual ~AAA() { cout << "ab" << endl; }
 };
 
 class BBB : public AAA
@@ -75,8 +77,10 @@ class BBB : public AAA
 public:
 	virtual void out() { cout << "ow" << endl; }
 	BBB() { cout << "ba" << endl; }
-	~BBB() { cout << "bb" << endl; }
+	virtual ~BBB() { cout << "bb" << endl; }
 };
+*/
+
 
 int main()
 {	
@@ -97,9 +101,21 @@ int main()
 	//delete a;
 	
 	//AAA* a = new AAA;
-	AAA* b = new BBB; // == AAA* aa = (BBB*)malloc(sizeof(BBB));
+	/*
+	AAA* b = new BBB; // == AAA* aa = (BBB*)malloc(sizeof(BBB)); & BBB 생성자도 호출 상태
 	b->out();
 	delete b;
+	*/
+
+	MainUpdate Main;
+	Main.Start();
+
+	while (true)
+	{
+		system("cls");
+		Main.Update();
+		Main.Render();
+	}
 
 	return 0;
 }
