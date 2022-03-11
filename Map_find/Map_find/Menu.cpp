@@ -10,7 +10,7 @@ void Menu::Update()
 {
 	if (GetAsyncKeyState('S'))
 	{
-		SceneManager::GetInstance()->SetScene(SCENEID_STAGE);
+		GETSINGLE(SceneManager)->SetScene(SCENEID_STAGE);
 	}
 }
 

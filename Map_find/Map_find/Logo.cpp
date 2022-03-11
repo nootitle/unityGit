@@ -19,7 +19,7 @@ void Logo::Update()
 {
 	if (GetAsyncKeyState('A'))
 	{
-		SceneManager::GetInstance()->SetScene(SCENEID_MENU);
+		GETSINGLE(SceneManager)->SetScene(SCENEID_MENU);
 	}
 }
 

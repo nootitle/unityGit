@@ -1,6 +1,7 @@
 #include "MainUpdate.h"
 #include "SceneManager.h"
 #include "CursorManager.h"
+#include "headers.h"
 
 MainUpdate::MainUpdate()
 {
@@ -14,22 +15,22 @@ MainUpdate::~MainUpdate()
 
 void MainUpdate::Start()
 {
-	SceneManager::GetInstance()->SetScene(SCENEID_LOGO);
+	GETSINGLE(SceneManager)->SetScene(SCENEID_LOGO);
 }
 
 void MainUpdate::Update()
 {
-	SceneManager::GetInstance()->Update();
+	GETSINGLE(SceneManager)->Update();
 	
 }
 
 void MainUpdate::Render()
 {
-	SceneManager::GetInstance()->Render();
+	GETSINGLE(SceneManager)->Render();
 
 }
 
 void MainUpdate::Release()
 {
-	
+	DESTROY_SINGLETON(SceneManager);
 }

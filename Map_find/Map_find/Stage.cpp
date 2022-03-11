@@ -3,6 +3,7 @@
 #include "ObjectManager.h"
 #include "CursorManager.h"
 #include "collision.h"
+#include "headers.h"
 
 Stage::Stage() : m_pPlayer(nullptr), Enemys(nullptr)
 {
@@ -85,7 +86,7 @@ void Stage::Update()
 		if (CollisionManager::Collision(m_pPlayer, (*itr)))
 		{
 			CursorManager::SetCursorPosition(44, 2);
-			cout << "Á¿µÊ*****************************" << endl;
+			cout << "*****************************" << endl;
 		}
 
 
@@ -98,7 +99,7 @@ void Stage::Update()
 
 	if (GetAsyncKeyState('D'))
 	{
-		SceneManager::GetInstance()->SetScene(SCENEID_LOGO);
+		GETSINGLE(SceneManager)->SetScene(SCENEID_LOGO);
 	}
 	/*
 	for (auto i : m_enemyObject)
@@ -127,5 +128,10 @@ void Stage::Render()
 
 void Stage::Release()
 {
+	::Safe_Delete(m_pPlayer);
+	for (auto i = Enemys->begin(); i != Enemys->end(); ++i)
+	{
+		::Safe_Delete(*i);
+	}
 }
 

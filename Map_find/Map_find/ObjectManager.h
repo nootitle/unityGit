@@ -20,6 +20,7 @@ public:
 	list<Object*>* FindList(string _strkey);
 	Object* FindPlayer();
 	void setActive(string kind, int index, bool value);
+	void Release();
 private:
 	ObjectManager();
 public:

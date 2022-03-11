@@ -4,15 +4,8 @@
 class Scene;
 class SceneManager
 {
-private:
-	static SceneManager* Instance;
 public:
-	static SceneManager* GetInstance()
-	{
-		if (Instance == nullptr)
-			Instance = new SceneManager;
-		return Instance;
-	}
+	DECLARE_SINGLETON(SceneManager);
 private:
 	Scene* SceneState;
 public:

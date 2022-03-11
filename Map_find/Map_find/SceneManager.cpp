@@ -3,7 +3,7 @@
 #include "Stage.h"
 #include "Menu.h"
 
-SceneManager* SceneManager::Instance = nullptr; //static 변수는 전역 초기화를 함
+//SceneManager* SceneManager::Instance = nullptr; //static 변수는 전역 초기화를 함
 
 SceneManager::SceneManager() : SceneState(nullptr)
 {
@@ -53,4 +53,6 @@ void SceneManager::Render()
 void SceneManager::Release()
 {
 	SceneState->Release();
+
+	::Safe_Delete(SceneState);
 }

@@ -50,6 +50,13 @@ void ObjectManager::setActive(string kind, int index, bool value)
 
 }
 
+void ObjectManager::Release()
+{
+	for (auto itr = Objects.begin(); itr != Objects.end(); ++itr)
+		for (auto itr2 = itr->second.begin(); itr2 != itr->second.end(); ++itr2)
+			::Safe_Delete(*itr2);
+}
+
 list<Object*>* ObjectManager::FindList(string _strkey)
 {
 	auto itr = Objects.find(_strkey);

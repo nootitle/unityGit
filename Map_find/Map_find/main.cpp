@@ -81,6 +81,53 @@ public:
 };
 */
 
+typedef struct Info
+{
+	int iNumber;
+
+	Info() {};
+	Info(int _Number) :iNumber(_Number) {}
+}INFO;
+
+class AAA
+{
+public:
+	INFO* info;
+public:
+	template<typename T>
+	AAA* Clone(int num)
+	{
+		return new T(new INFO(num));
+	}
+	template<typename T>
+	AAA* Clone()
+	{
+		return new T(new INFO(info->iNumber));
+	}
+
+	AAA(Info* _Info) : info(_Info) {}
+	AAA(AAA* _a) {}
+	AAA() {}
+	~AAA() {}
+};
+
+class BBB : public AAA
+{
+public:
+	BBB(Info* _Info) : AAA(_Info) {}
+	BBB(AAA* _a) {}
+	BBB() {}
+	~BBB() {}
+};
+
+class CCC : public AAA
+{
+public:
+	CCC(Info* _Info) : AAA(_Info) {}
+	CCC(AAA* _a) {}
+	CCC() {}
+	~CCC() {}
+};
 
 int main()
 {	
@@ -107,6 +154,28 @@ int main()
 	delete b;
 	*/
 
+	/*
+	AAA* a1 = new BBB(new INFO(10));
+	AAA* a2 = new CCC(new INFO(20));
+
+	cout << a1->info->iNumber << endl;
+	cout << a2->info->iNumber << endl;
+	*/
+
+
+	AAA* a3 = new AAA(new INFO(30)); //Prefab
+
+	AAA* a4 = a3->Clone<BBB>(500); //인스턴스들
+	AAA* a5 = a3->Clone<CCC>(600);
+	AAA* a6 = a3->Clone<BBB>();
+
+	cout << a3->info->iNumber << endl;
+
+	cout << a4->info->iNumber << endl;
+	cout << a5->info->iNumber << endl;
+	cout << a6->info->iNumber << endl;
+
+	/*
 	MainUpdate Main;
 	Main.Start();
 
@@ -116,6 +185,7 @@ int main()
 		Main.Update();
 		Main.Render();
 	}
+	*/
 
 	return 0;
 }
