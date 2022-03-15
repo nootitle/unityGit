@@ -116,6 +116,11 @@ class BBB : public AAA
 public:
 	BBB(Info* _Info) : AAA(_Info) {}
 	BBB(AAA* _a) {}
+	AAA* Clone()
+	{
+		return new BBB(*this);
+	}
+
 	BBB() {}
 	~BBB() {}
 };
@@ -125,6 +130,11 @@ class CCC : public AAA
 public:
 	CCC(Info* _Info) : AAA(_Info) {}
 	CCC(AAA* _a) {}
+	AAA* Clone()
+	{
+		return new CCC(*this);
+	}
+
 	CCC() {}
 	~CCC() {}
 };
