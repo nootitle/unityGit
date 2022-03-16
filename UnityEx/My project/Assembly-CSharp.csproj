@@ -59,8 +59,10 @@
     <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\PrototypeHeroAnimEvents.cs" />
     <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\Sensor_Prototype.cs" />
     <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\AudioManager_PrototypeHero.cs" />
-    <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\GrabableLedge.cs" />
     <Compile Include="Assets\PlayerController.cs" />
+    <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\GrabableLedge.cs" />
+    <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\billboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Prototype Hero - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
