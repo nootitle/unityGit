@@ -53,6 +53,8 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\billboard.cs" />
     <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\PrototypeHero.cs" />
     <Compile Include="Assets\Prototype Hero - Pixel Art\ColorSwap\ColorSwap_Prototype.cs" />
     <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\Dust_DestroyEvent.cs" />
@@ -61,10 +63,10 @@
     <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\AudioManager_PrototypeHero.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Prototype Hero - Pixel Art\Demo\GrabableLedge.cs" />
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\billboard.cs" />
+    <Compile Include="Assets\LoadData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Knight Files\Read Me.txt" />
     <None Include="Assets\Prototype Hero - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
   </ItemGroup>
   <ItemGroup>

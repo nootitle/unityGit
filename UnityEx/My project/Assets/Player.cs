@@ -17,12 +17,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         float Hor = Input.GetAxis("Horizontal");
+        float Ver = Input.GetAxis("Vertical");
         //GetAxisRaw : -1, 0, 1¸¸ Ãâ·Â
 
-        transform.Translate(Hor * 5.0f * Time.deltaTime, 0.0f, 0.0f);
-        float size_x = Camera.main.transform.position.x;
+        transform.Translate(Hor * 5.0f * Time.deltaTime, Ver * 5.0f * Time.deltaTime, 0.0f);
+        float xlimit = Camera.main.transform.position.x +
+            Camera.main.aspect * Camera.main.orthographicSize;
 
-        if (size_x > pointX - 5)
+        if (xlimit > pointX - 5)
         {
             GameObject Obj = Instantiate(_bg);
             Vector3 vPos = new Vector3(pointX + BG.size.x, 0.0f, 0.0f);
