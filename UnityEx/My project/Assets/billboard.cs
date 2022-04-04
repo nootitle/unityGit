@@ -9,12 +9,12 @@ public class billboard : MonoBehaviour
 
     void Start()
     {
-        zValue = this.transform.position.z;
+
     }
 
     void Update()
     {
         this.transform.position = new Vector3(_player.transform.position.x,
-            _player.transform.position.y, zValue);
+            this.transform.position.y, this.transform.position.z);
     }
 }
